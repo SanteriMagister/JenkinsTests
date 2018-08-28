@@ -14,6 +14,8 @@ module.exports = function (config) {
       require('karma-phantomjs-launcher'),
       require('karma-junit-reporter'),
       require('babel-polyfill'),
+      require('phantomjs-polyfill-find'),
+      require('phantomjs-polyfill-object-assign'),
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
@@ -28,15 +30,11 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
     singleRun: true,
     junitReporter: {
       outputDir: 'karma-results',
       outputFile: 'karma-results.xml'
     },
-    files: ['./node_modules/babel-polyfill/dist/polyfill.js', 'specs/**/*.ts',
-      './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
-      './node_modules/phantomjs-polyfill-find/find-polyfill.js',
-    ]
   });
 };
