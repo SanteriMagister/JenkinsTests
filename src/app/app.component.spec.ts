@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
+require('babel-polyfill');
+
 describe('AppComponent', () => {
 
   beforeEach(async(() => {
